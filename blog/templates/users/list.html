@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}
+Пользователи
+{% endblock %}
+{% block body %}
+<h1> Список пользователей: </h1>
+{% for user in users %}
+<li> username: <b> {{ user["username"]}} </b>. Имя: <b> {{ user["name"]}} </b></li>
+{% endfor %}
+{% endblock %}

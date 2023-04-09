@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}
+Статьи
+{% endblock %}
+{% block body %}
+{% for article in articles %}
+<h1> {{ article["title"] }}</h1>
+<li> Автор статьи: <b> <a href="{{ url_for('users_app.details', user_id=article['author']) }}"> {{
+            article["author"]}} </a> </b> </li>
+<li> {{ article["text"] }}</li>
+{% endfor %}
+{% endblock %}
