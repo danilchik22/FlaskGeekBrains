@@ -5,28 +5,30 @@ users_app = Blueprint("users_app", __name__)
 
 USERS = [
     {
-    "id": 1,
-    "username": "vasya01",
-    "name": "Василий",
-    "age": 32,
+        "id": 1,
+        "username": "vasya01",
+        "name": "Василий",
+        "age": 32,
     },
     {
-    "id": 2,
-    "username": "vanyaAbrikos",
-    "name": "Иван",
-    "age": 15,
+        "id": 2,
+        "username": "vanyaAbrikos",
+        "name": "Иван",
+        "age": 15,
     },
     {
-    "id": 3,
-    "username": "petrovich",
-    "name": "Григорий",
-    "age": 56,
-    }
+        "id": 3,
+        "username": "petrovich",
+        "name": "Григорий",
+        "age": 56,
+    },
 ]
+
 
 @users_app.route("/", endpoint="list")
 def list_users():
     return render_template("users/list.html", users=USERS)
+
 
 @users_app.route("/<int:user_id>/", endpoint="details")
 def detail_user(user_id: int):
