@@ -5,6 +5,9 @@
 {% block body %}
 <h1> Список пользователей: </h1>
 {% for user in users %}
-<li> username: <b> {{ user["username"]}} </b>. Имя: <b> {{ user["name"]}} </b></li>
+<li> username: <b> {{ user.username}} </b>. email: <b> {{ user.email}} </b></li>
+{% if user.is_staff %}
+<span class="badge bg-secondary"> staff </span>
+{% endif %}
 {% endfor %}
 {% endblock %}

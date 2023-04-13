@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block body %}
+<h1> Привет,
+    {% if current_user.is_authenticated %}
+    {{current_user.username}}
+    {% else %}
+    anon
+    {% endif %}
+</h1>
+{% endblock %}

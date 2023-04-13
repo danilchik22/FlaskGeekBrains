@@ -1,8 +1,11 @@
 {% extends 'base.html' %}
 {% block title %}
-Пользователь {{user["username"]}}
+Пользователь #{{user.id}}
 {% endblock %}
 {% block body %}
-<li> Имя пользователя: {{user["name"]}}</li>
+<li> Username пользователя: {{user.username}}</li>
 <li> Возраст пользователя: {{user["age"]}}</li>
+{% if user.is_staff %}
+<span class="badge bg-secondary"> staff </span>
+{% endblock %}
 {% endblock %}

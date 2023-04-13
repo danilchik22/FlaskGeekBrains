@@ -42,6 +42,43 @@ dotenv = ["python-dotenv"]
 
 [[package]]
 category = "main"
+description = "User authentication and session management for Flask."
+name = "flask-login"
+optional = false
+python-versions = ">=3.7"
+version = "0.6.2"
+
+[package.dependencies]
+Flask = ">=1.0.4"
+Werkzeug = ">=1.0.1"
+
+[[package]]
+category = "main"
+description = "Add SQLAlchemy support to your Flask application."
+name = "flask-sqlalchemy"
+optional = false
+python-versions = ">=3.7"
+version = "3.0.3"
+
+[package.dependencies]
+Flask = ">=2.2"
+SQLAlchemy = ">=1.4.18"
+
+[[package]]
+category = "main"
+description = "Lightweight in-process concurrent programming"
+marker = "platform_machine == \"aarch64\" or platform_machine == \"ppc64le\" or platform_machine == \"x86_64\" or platform_machine == \"amd64\" or platform_machine == \"AMD64\" or platform_machine == \"win32\" or platform_machine == \"WIN32\""
+name = "greenlet"
+optional = false
+python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
+version = "2.0.2"
+
+[package.extras]
+docs = ["sphinx", "docutils (<0.18)"]
+test = ["objgraph", "psutil"]
+
+[[package]]
+category = "main"
 description = "Read metadata from Python packages"
 marker = "python_version < \"3.10\""
 name = "importlib-metadata"
@@ -89,6 +126,57 @@ version = "2.1.2"
 
 [[package]]
 category = "main"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+name = "psycopg2"
+optional = false
+python-versions = ">=3.6"
+version = "2.9.6"
+
+[[package]]
+category = "main"
+description = "Database Abstraction Library"
+name = "sqlalchemy"
+optional = false
+python-versions = ">=3.7"
+version = "2.0.9"
+
+[package.dependencies]
+greenlet = "!=0.4.17"
+typing-extensions = ">=4.2.0"
+
+[package.extras]
+aiomysql = ["greenlet (!=0.4.17)", "aiomysql"]
+aiosqlite = ["greenlet (!=0.4.17)", "aiosqlite", "typing-extensions (!=3.10.0.1)"]
+asyncio = ["greenlet (!=0.4.17)"]
+asyncmy = ["greenlet (!=0.4.17)", "asyncmy (>=0.2.3,<0.2.4 || >0.2.4,<0.2.6 || >0.2.6)"]
+mariadb_connector = ["mariadb (>=1.0.1,<1.1.2 || >1.1.2,<1.1.5 || >1.1.5)"]
+mssql = ["pyodbc"]
+mssql_pymssql = ["pymssql"]
+mssql_pyodbc = ["pyodbc"]
+mypy = ["mypy (>=0.910)"]
+mysql = ["mysqlclient (>=1.4.0)"]
+mysql_connector = ["mysql-connector-python"]
+oracle = ["cx-oracle (>=7)"]
+oracle_oracledb = ["oracledb (>=1.0.1)"]
+postgresql = ["psycopg2 (>=2.7)"]
+postgresql_asyncpg = ["greenlet (!=0.4.17)", "asyncpg"]
+postgresql_pg8000 = ["pg8000 (>=1.29.1)"]
+postgresql_psycopg = ["psycopg (>=3.0.7)"]
+postgresql_psycopg2binary = ["psycopg2-binary"]
+postgresql_psycopg2cffi = ["psycopg2cffi"]
+pymysql = ["pymysql"]
+sqlcipher = ["sqlcipher3-binary"]
+
+[[package]]
+category = "main"
+description = "Backported and Experimental Type Hints for Python 3.7+"
+name = "typing-extensions"
+optional = false
+python-versions = ">=3.7"
+version = "4.5.0"
+
+[[package]]
+category = "main"
 description = "The comprehensive WSGI web application library."
 name = "werkzeug"
 optional = false
@@ -115,16 +203,22 @@ docs = ["sphinx (>=3.5)", "jaraco.packaging (>=9)", "rst.linker (>=1.9)", "furo"
 testing = ["pytest (>=6)", "pytest-checkdocs (>=2.4)", "flake8 (<5)", "pytest-cov", "pytest-enabler (>=1.3)", "jaraco.itertools", "jaraco.functools", "more-itertools", "big-o", "pytest-black (>=0.3.7)", "pytest-mypy (>=0.9.1)", "pytest-flake8"]
 
 [metadata]
-content-hash = "98b0eec7b56b8de440995683d55ed0927002b7aff73775b2683c55d50b480a35"
+content-hash = "97db062ebc38f8ab1e57bb1f0fcf0b73647de824387fed36aa77e6725ef71889"
 python-versions = "^3.8"
 
 [metadata.files]
 click = []
 colorama = []
 flask = []
+flask-login = []
+flask-sqlalchemy = []
+greenlet = []
 importlib-metadata = []
 itsdangerous = []
 jinja2 = []
 markupsafe = []
+psycopg2 = []
+sqlalchemy = []
+typing-extensions = []
 werkzeug = []
 zipp = []
