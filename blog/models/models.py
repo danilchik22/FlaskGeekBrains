@@ -22,6 +22,7 @@ class Article(db.Model):
     title = Column(String(150), nullable=False)
     text = Column(Text, nullable=False)
     author = Column(Integer, ForeignKey('user.id'))
+    is_delete = Column(Boolean, default=False)
 
 
     def __repr__(self):

@@ -4,6 +4,8 @@ from blog.views.articles import articles_app
 from blog.models.database import db
 from blog.views.auth import auth_app, login_manager
 from blog.views.index import index_app
+from flask_migrate import Migrate
+
 
 def register_blueprints(app: Flask):
     app.register_blueprint(users_app, url_prefix="/users")
@@ -14,7 +16,7 @@ def register_blueprints(app: Flask):
 
 def create_app():
     app = Flask(__name__)
-    app.config["SQLALCHEMY_DEBUG"] = False
+    app.config["SQLALCHEMY_DEBUG"] = True
     app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://postgres:admin@localhost/blog"
     app.config["SECRET_KEY"] = "qwd;;gu393390qiefjkwldkasdjkdkjkdwp[a03]"
     db.init_app(app)
@@ -22,3 +24,5 @@ def create_app():
     register_blueprints(app)
     return app
 
+app = create_app()
+migrate = Migrate(app, db, compare_type=True)

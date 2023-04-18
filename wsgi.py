@@ -1,8 +1,8 @@
 from blog.app import create_app
 from blog.models.database import db
 from werkzeug.security import generate_password_hash
+from blog.app import app
 
-app = create_app()
 
 if __name__ == "__main__":
     app.run(
